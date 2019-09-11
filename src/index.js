@@ -3,9 +3,7 @@
 //ES6
 import React from "react"
 import ReactDOM from "react-dom"
-
-//Mi Componente "App"
-let App = () => { return "Hola Mundo" }
+import App from "./App"
 
 //Conectar un componente con el DOM
 ReactDOM.render(

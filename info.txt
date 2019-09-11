@@ -35,3 +35,20 @@ tipo :
 3 - Un componente ejecutado se escribe en forma JSX : 
 
         App()   ===    <App/>
+
+
+
+
+4- Los componentes solo pueden retornan una sola cosa. Si tengo multiple retorno de elementos los puedo agregar adentro de una etiqueta HTML 
+
+
+
+/*******************************************/
+
+let app = function (){}
+let app = () => {}
+
+
+let app = function (){ return "hola" }
+let app = () => { return "hola" }
+let app = () => "hola" 
