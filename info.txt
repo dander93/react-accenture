@@ -40,7 +40,8 @@ tipo :
 
 
 4- Los componentes solo pueden retornan una sola cosa. Si tengo multiple retorno de elementos los puedo agregar adentro de una etiqueta HTML 
-
+5 - Una funcion de tipo Class siempre extiende a React.Component
+6 - Una clase, para retornar, necesita estar adentro del metodo ciclo de vida "render"
 
 
 /*******************************************/
@@ -52,3 +53,24 @@ let app = () => {}
 let app = function (){ return "hola" }
 let app = () => { return "hola" }
 let app = () => "hola" 
+
+
+
+src/ 
+    |_ api/
+    |_ ui/
+        |_ widgets/
+        |_ paginas/
+        |_ layout/ 
+            |_ App.js
+            |_ Header.js
+                header
+                    h1
+                    nav
+                        a * 3
+            |_ Footer.js
+                footer
+                    p 
+            |_ Main.js
+                main
+                    h2
