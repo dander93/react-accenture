@@ -21,4 +21,17 @@ tipo :
 
 > npm i -g create-react-app
 > create-react-app <proyecto>
+> cd <proyecto>
+> npm start 
 
+
+1 - Siempre tiene que estar la variable React en scope
+2 - Todos los componentes de react son funciones en mayuscula que retornan otro React.Component , DOMElement  ó String : 
+
+    function App(){ return "Hola Mundo" }
+    let App = () => { return "Hola Mundo" }
+    class App {}
+
+3 - Un componente ejecutado se escribe en forma JSX : 
+
+        App()   ===    <App/>

@@ -1,12 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+//CommonJS 
+//const React = require("react")
+//ES6
+import React from "react"
+import ReactDOM from "react-dom"
 
-ReactDOM.render(<App />, document.getElementById('root'));
+//Mi Componente "App"
+let App = () => { return "Hola Mundo" }
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+//Conectar un componente con el DOM
+ReactDOM.render(
+    <App/>,//Un componente ejecutado
+    document.getElementById("root")
+)
