@@ -49,6 +49,7 @@ tipo :
     <App test="hola" /> ===   App({test:"hola"})
     <App fn={()=>{}} /> ===   App({fn:()=>{}})
 
+9 - El estado de un componente no puede ser modificado por asignacion de variable sino a través de this.setState({}) , en donde describimos como debería verse el próximo estado de la aplicación
 
 
 
@@ -109,3 +110,55 @@ let {x,y,z} = obj
 let x = obj.x
 let y = obj.y
 let z = obj.z
+
+
+
+
+
+
+CONTEXTO : Hace referencia al objeto que contiene a la funcion, por lo general y esta en la palabra reservada "this".  No es estatico, es decir que puede cambiar dependiendo la ejecucion o el programador. 
+//window.foo = function foo(){}
+//var foo = function foo(){}
+function foo(){
+    console.log(this)
+}
+
+foo() // window{}
+
+
+
+let obj = {
+    x : 1 , 
+    fn : function(){
+        console.log(this)
+        window.setTimeout(()=>{
+            console.log(this)
+        },0)
+    }
+}
+
+obj.fn() // obj{}
+
+
+
+
+
+
+
+//CALL - APPLY - BIND - NEW 
+function ctx(a,b){
+    console.log(a,b)
+    console.log(this)
+}
+
+ctx(1,2) //1 2 window{}
+ctx.call({x:1},1,2) //1 2 {x:1}
+ctx.apply({x:1},[1,2]) //1 2 {x:1}
+let otra_fn = ctx.bind({x:1})
+
+otra_fn()
+ctx()
+
+
+https://www.youtube.com/watch?v=PMfcsYzj-9M
+https://github.com/rus0000/jsinheritance

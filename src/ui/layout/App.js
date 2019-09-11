@@ -8,15 +8,23 @@ class App extends Component {
     constructor(){
         super()
         this.state = {
-            links : ["perfil","portfolio","contacto"]
+            links : ["perfil","portfolio","contacto"],
+            texto : "Lorem Ipsum"
         }
+        this.cambiarTexto = this.cambiarTexto.bind(this)
+    }
+
+    cambiarTexto(){
+        this.setState({ texto : "Ipsum Lorem" })
     }
     
     render(){
-        let {links} = this.state
+        let {links,texto} = this.state
         return (
             <>
             <Header links={links}/>
+            <p>{texto}</p>
+            <button onClick={this.cambiarTexto}>click!</button>
             <Main/>
             <Footer/>
             </>     
