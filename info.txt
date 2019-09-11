@@ -42,6 +42,15 @@ tipo :
 4- Los componentes solo pueden retornan una sola cosa. Si tengo multiple retorno de elementos los puedo agregar adentro de una etiqueta HTML 
 5 - Una funcion de tipo Class siempre extiende a React.Component
 6 - Una clase, para retornar, necesita estar adentro del metodo ciclo de vida "render"
+7 - Un componente de tipo clase puede tener estado(state) el cual es creado en su constructor. Este estado puede ser compartido a todos sus componentes hijos. Cada vez que el estado cambia, este y todos los componentes que lo usen, van a volver a ejecutar su método render. 
+8 - Cualquier componente de react puede recibir parametros(props) de solo lectura, usualmente son el state de un componente padre y se escriben en JSX como atributos de HTML : 
+
+    <App required />    ===   App({required:true})
+    <App test="hola" /> ===   App({test:"hola"})
+    <App fn={()=>{}} /> ===   App({fn:()=>{}})
+
+
+
 
 
 /*******************************************/
@@ -56,21 +65,47 @@ let app = () => "hola"
 
 
 
-src/ 
-    |_ api/
-    |_ ui/
-        |_ widgets/
-        |_ paginas/
-        |_ layout/ 
-            |_ App.js
-            |_ Header.js
-                header
-                    h1
-                    nav
-                        a * 3
-            |_ Footer.js
-                footer
-                    p 
-            |_ Main.js
-                main
-                    h2
+
+SENTENCIAS : No necesariamente dan retorno (if/else/forEach/for/for...in)
+
+let foo = if(condicion){return true }else{return false}
+let arr = [1,2,3]
+let nuevo_array = []
+
+arr.forEach(([elemento,indice,lista])=>{
+    nuevo_array.push(elemento+1)
+})
+
+EXPRESIONES : Obligatoriamente da retorno(operador ternario)
+
+let foo = condicion ? true : false
+
+let arr = [1,2,3]
+let nuevo_array = arr.map((e,i,a)=>{
+    return e + 1
+})
+let nuevo_array = arr.map((e)=> e + 1)
+let nuevo_array = arr.map(e=> e + 1)
+
+
+
+
+
+DESTRUCTURING : 
+
+let arr = [1,2,3,4]
+let [uno,dos,tres,cuatro] = arr
+
+let uno = arr[0]
+let dos = arr[1]
+let tres = arr[2]
+let cuatro = arr[3]
+
+let obj = {x:1,y:2,z:3}
+let {x:x,y:y,z:z} = obj
+//OBJECT SHORTHAND
+let {x,y,z} = obj
+
+let x = obj.x
+let y = obj.y
+let z = obj.z
