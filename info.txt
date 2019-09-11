@@ -1,0 +1,24 @@
+horacio.estevez@gmail.com
+
+https://github.com/HoracioGutierrez/react-accenture
+
+http://alumni.education
+
+http://educacionit.com/tualua
+
+
+Node.JS : Entorno de desarrollo I/O Asincronico
+
+NPM : Node Package Manager
+
+npm {install|i} <tipo> <paquete>
+
+tipo : 
+
+    --save|-S           Paquetes de produccion
+    --save-dev|-D       Paquetes de desarrollo
+    -g                  Paquetes globales
+
+> npm i -g create-react-app
+> create-react-app <proyecto>
+
