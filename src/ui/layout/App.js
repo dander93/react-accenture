@@ -23,8 +23,6 @@ class App extends Component {
         return (
             <>
             <Header links={links}/>
-            <p>{texto}</p>
-            <button onClick={this.cambiarTexto}>click!</button>
             <Main/>
             <Footer/>
             </>     

@@ -1,6 +1,6 @@
 horacio.estevez@gmail.com
 
-https://github.com/HoracioGutierrez/react-accenture
+
 
 http://alumni.education
 
@@ -162,3 +162,14 @@ ctx()
 
 https://www.youtube.com/watch?v=PMfcsYzj-9M
 https://github.com/rus0000/jsinheritance
+
+https://github.com/HoracioGutierrez/react-accenture
+
+https://tinyurl.com/y5ay4zt2
+
+1) Crear un estado nuevo en App llamado "contador" que inicie con el numero 0
+2) Crear un componente nuevo llamado Contador e incluirlo por JSX en App
+3) Pasarle a Contador por prop el state de App "contador"
+4) Crear un método en App llamado aumentarContador , el cual aumenta el numero en una unidad
+5) Pasarle a Contador por prop el método del punto anterior
+6) Asignarle al onClick de un boton en Contador el prop recibido del método 
