@@ -54,6 +54,50 @@ tipo :
 
 
 
+CICLOS DE VIDA DE UN COMPONENTE : Los métodos de cada ciclo de vida son funciones de clase preestablecidas en React y solo funcionan para componentes de tipo clase, no para componentes funcionales. Se separan en tres grupos : 
+
+- mount :
+    constructor : inicio del componente. Aca creamos el estado, bindeamos metodos y/o hacemos cualquier configuracion extra 
+
+    componentWillMount : 
+
+    render : UI del componente en JSX
+
+    componentDidMount : Subscripciones a APIs REST y/o DB
+
+
+- update : 
+    shouldComponentUpdate : Dado que cada componente se actualiza por cambios de props, recepción de props y/o cambio de estado, este método es ideal para cuando recibimos nuevos props que son iguales a los que ya teniamos. Siempre tiene que retornar true o false. 
+
+    render 
+
+
+- unmount
+    componentWillUnmount : opuesto componentDidMount. Removes eventos, timers y subscripciones. 
+
+
+
+https://es.reactjs.org/docs/react-component.html
+
+
+
+
+
+https://tinyurl.com/y5cwoj8y
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*******************************************/
 
 let app = function (){}
@@ -167,9 +211,3 @@ https://github.com/HoracioGutierrez/react-accenture
 
 https://tinyurl.com/y5ay4zt2
 
-1) Crear un estado nuevo en App llamado "contador" que inicie con el numero 0
-2) Crear un componente nuevo llamado Contador e incluirlo por JSX en App
-3) Pasarle a Contador por prop el state de App "contador"
-4) Crear un método en App llamado aumentarContador , el cual aumenta el numero en una unidad
-5) Pasarle a Contador por prop el método del punto anterior
-6) Asignarle al onClick de un boton en Contador el prop recibido del método 
