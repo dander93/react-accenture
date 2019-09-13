@@ -203,11 +203,13 @@ let otra_fn = ctx.bind({x:1})
 otra_fn()
 ctx()
 
+https://tinyurl.com/y5ay4zt2
 
-https://www.youtube.com/watch?v=PMfcsYzj-9M
 https://github.com/rus0000/jsinheritance
 
 https://github.com/HoracioGutierrez/react-accenture
 
-https://tinyurl.com/y5ay4zt2
+https://www.youtube.com/watch?v=PMfcsYzj-9M
 
+SOURCE DECODED 
+https://www.youtube.com/channel/UCl0hPcsUmeld49qmWWSQKOg/videos

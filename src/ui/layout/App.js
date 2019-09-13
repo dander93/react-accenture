@@ -13,7 +13,9 @@ class App extends Component {
             links : ["perfil","portfolio","contacto"],
             texto : "Lorem Ipsum",
             contador : 0,
-            visible : true
+            visible : true,
+            nombre : "",
+            apellido : ""
         }
         this.cambiarTexto = this.cambiarTexto.bind(this)
         this.aumentarContador = this.aumentarContador.bind(this)
@@ -21,6 +23,7 @@ class App extends Component {
         this.resetearContador = this.resetearContador.bind(this)
         this.toggleVisibility = this.toggleVisibility.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleChange = this.handleChange.bind(this)
     }
 
     handleSubmit(e/*nombre*/){
@@ -33,10 +36,26 @@ class App extends Component {
         //console.log(nombre)
 
         //3) Referencia de Event
-        let nombre = e.target[0].value
-        console.dir(nombre)
-        
+        //let nombre = e.target[0].value
 
+        //4) Controlar el cambio del input y a cada cambio de valor, guardarlo en el state de un padre. Usar este valor para retroalimentar el mismo input. 
+        console.log(this.state.nombre,this.state.apellido)
+
+        //1) Crear un state nuevo llamado usuarios y que sea un array vacio
+        //2) Usar el nombre y el apellido para construir un objeto
+        //3) Sin hacer push sobre this.state.usuarios, encontrar la forma para ir agregando cada nuevo usuario al array
+        //4) Limpiar el string de nombre y apellido 
+    }
+
+    handleChange(e){
+        //let id = e.target.id
+        //let value = e.target.value
+        //let campo = {}
+        //campo[id] = value
+        //this.setState(campo)
+        //console.log(id + " : " + value)
+        //console.log(id + ' : ' + value)
+        this.setState({ [e.target.id] : e.target.value })
     }
 
     toggleVisibility(){
@@ -60,13 +79,13 @@ class App extends Component {
     }
     
     render(){
-        let {links,contador,visible} = this.state
+        let {links,contador,visible,nombre,apellido} = this.state
         return (
             <>
             <Header links={links}/>
             <Main/>
 
-            <Formulario visible={visible} toggleVisibility={this.toggleVisibility} handleSubmit={this.handleSubmit}/>
+            <Formulario visible={visible} toggleVisibility={this.toggleVisibility} handleSubmit={this.handleSubmit} handleChange={this.handleChange} nombre={nombre} apellido={apellido}/>
 
             <Contador contador={contador} aumentarContador={this.aumentarContador}  disminuirContador={this.disminuirContador}  resetearContador={this.resetearContador} />
             <Footer/>
