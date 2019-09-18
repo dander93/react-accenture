@@ -57,13 +57,13 @@ class App extends Component {
     }
     
     render(){
-        let {links,contador,visible,nombre,apellido} = this.state
+        let {links,contador,visible,nombre,apellido,usuarios} = this.state
         return (
             <>
             <Header links={links}/>
             <Main/>
 
-            <Formulario visible={visible} toggleVisibility={this.toggleVisibility} handleSubmit={this.handleSubmit} handleChange={this.handleChange} nombre={nombre} apellido={apellido}/>
+            <Formulario visible={visible} toggleVisibility={this.toggleVisibility} handleSubmit={this.handleSubmit} handleChange={this.handleChange} nombre={nombre} apellido={apellido} usuarios={usuarios}/>
 
             <Contador contador={contador} aumentarContador={this.aumentarContador}  disminuirContador={this.disminuirContador}  resetearContador={this.resetearContador} />
             <Footer/>

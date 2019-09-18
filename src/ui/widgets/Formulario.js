@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import ListadoUsuarios from "./ListadoUsuarios"
 
 class Formulario extends Component {
 
     render() {
-        let {toggleVisibility,visible,handleSubmit,handleChange,nombre,apellido} = this.props
+        let {toggleVisibility,visible,handleSubmit,handleChange,nombre,apellido,usuarios} = this.props
         return (
             <div>
                 
@@ -22,6 +23,9 @@ class Formulario extends Component {
                 <button onClick={toggleVisibility}>
                     {visible ? "Ocultar" : "Mostrar"}
                 </button>
+
+                <ListadoUsuarios usuarios={usuarios}/>
+
             </div>
         )
     }
@@ -30,9 +34,3 @@ class Formulario extends Component {
 export default Formulario
 
 
-/* 
-<form onSubmit={e=>{
-    e.preventDefault()
-    handleSubmit(this.refs.nombre.value)
-}}> 
-*/

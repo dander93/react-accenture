@@ -83,6 +83,32 @@ https://es.reactjs.org/docs/react-component.html
 
 
 
+REDUX : Es una libreria para implementar el patron de Pub/Sub en cualquier aplicación de JS. Se separa en dos : redux y react-redux , siendo la ultima la que nos permite conectar redux  con una aplicación de React. 
+
+Store : Es analogo al state de un componente pero este no se crea directo sino que con un reducer.
+
+Reducer : Es una funcion pura que toma dos parametros : el estado inicial de la aplicación(o anterior) y el action que se está despachando. El reducer tiene que switchear en base a la acción y retornar el nuevo estado de la aplicación. 
+
+
+
+
+npm i -S redux react-redux 
+
+REDUX
+1) Crear en algun archivo un store : Para eso necesitamos la funcion createStore de "redux". Esta toma como parametro un reducer 
+2) Crear en algun archivo un reducer : Para eso no necesitamos nada, solo exportar una funcion que tome dos parametros y siempre retorne algo dentro de un switch
+
+
+
+REACT REDUX
+
+
+
+
+
+
+
+
 https://tinyurl.com/y5cwoj8y
 
 
@@ -203,6 +229,12 @@ let otra_fn = ctx.bind({x:1})
 otra_fn()
 ctx()
 
+
+
+PUBSUB - Observer 
+
+
+
 https://tinyurl.com/y5ay4zt2
 
 https://github.com/rus0000/jsinheritance
@@ -213,3 +245,4 @@ https://www.youtube.com/watch?v=PMfcsYzj-9M
 
 SOURCE DECODED 
 https://www.youtube.com/channel/UCl0hPcsUmeld49qmWWSQKOg/videos
+
