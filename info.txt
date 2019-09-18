@@ -103,8 +103,23 @@ REDUX
 REACT REDUX
 
 
+    Conectar la app con redux
+
+    1) Incluir la parte de la aplicación que nos interesa conectar a redux con el componente Provider de "react-redux"
+    
+    2) Pasarle como prop al Provider el store 
 
 
+
+
+
+
+    Conectar componentes individuales con el store
+
+
+    Consumir el store : necesitamos la funcion connect de "react-redux", ejecutarla y pasarle el componente que queremos conectar. 
+
+    Despachar una acción : necesitamos la funcion connect de "react-redux", ejecutarla y pasarle el componente que queremos conectar. 
 
 
 

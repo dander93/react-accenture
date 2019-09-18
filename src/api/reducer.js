@@ -1,9 +1,9 @@
 let init = {
-    x : 1
+    links : ["perfil","portfolio","contacto"]
 }
 
 let reducer = (prev=init,action) => {
-    switch(action){
+    switch(action.type){
         default : 
             return prev
     }
