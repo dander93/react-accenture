@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import ListadoUsuarios from "./ListadoUsuarios"
+import {connect} from "react-redux" 
+import {toggleVisibility,handleChange,handleSubmit} from "../../api/actions"
+import {bindActionCreators} from "redux"
 
 class Formulario extends Component {
 
@@ -31,6 +34,16 @@ class Formulario extends Component {
     }
 }
 
-export default Formulario
+export default connect(
+
+    ({visible,nombre,apellido}) => ({ visible,nombre,apellido }),
+
+    dispatch => ({
+        toggleVisibility : bindActionCreators(toggleVisibility,dispatch),
+        handleChange : bindActionCreators(handleChange,dispatch),
+        handleSubmit : bindActionCreators(handleSubmit,dispatch)
+    })
+
+)(Formulario)
 
 
