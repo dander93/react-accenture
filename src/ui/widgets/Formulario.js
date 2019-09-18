@@ -10,7 +10,7 @@ class Formulario extends Component {
                 {visible
                 ?   <form onSubmit={handleSubmit}>
                         
-                        <input type="text" id="nombre" placeholder="Nombre" /* ref="nombre" */ onChange={handleChange} value={nombre}/>
+                        <input type="text" id="nombre" placeholder="Nombre" onChange={handleChange} value={nombre}/>
 
                         <input type="text" id="apellido" placeholder="Apellido" onChange={handleChange} value={apellido}/>
 

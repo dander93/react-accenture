@@ -15,7 +15,8 @@ class App extends Component {
             contador : 0,
             visible : true,
             nombre : "",
-            apellido : ""
+            apellido : "",
+            usuarios : []
         }
         this.cambiarTexto = this.cambiarTexto.bind(this)
         this.aumentarContador = this.aumentarContador.bind(this)
@@ -26,35 +27,12 @@ class App extends Component {
         this.handleChange = this.handleChange.bind(this)
     }
 
-    handleSubmit(e/*nombre*/){
+    handleSubmit(e){
         e.preventDefault()
-
-        //1) Selectores
-        //let nombre = document.querySelector("input").value
-
-        //2) Prop "ref"
-        //console.log(nombre)
-
-        //3) Referencia de Event
-        //let nombre = e.target[0].value
-
-        //4) Controlar el cambio del input y a cada cambio de valor, guardarlo en el state de un padre. Usar este valor para retroalimentar el mismo input. 
-        console.log(this.state.nombre,this.state.apellido)
-
-        //1) Crear un state nuevo llamado usuarios y que sea un array vacio
-        //2) Usar el nombre y el apellido para construir un objeto
-        //3) Sin hacer push sobre this.state.usuarios, encontrar la forma para ir agregando cada nuevo usuario al array
-        //4) Limpiar el string de nombre y apellido 
+        this.setState({ usuarios : [...this.state.usuarios , {nombre:this.state.nombre,apellido:this.state.apellido} ] , nombre : "" , apellido : "" })
     }
 
     handleChange(e){
-        //let id = e.target.id
-        //let value = e.target.value
-        //let campo = {}
-        //campo[id] = value
-        //this.setState(campo)
-        //console.log(id + " : " + value)
-        //console.log(id + ' : ' + value)
         this.setState({ [e.target.id] : e.target.value })
     }
 
