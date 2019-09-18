@@ -17,4 +17,8 @@ class Header extends Component {
     }
 }
 
-export default connect()(Header)
+let mapStateToProps = store => {
+    return { links : store.links }
+}
+
+export default connect(mapStateToProps,null)(Header)

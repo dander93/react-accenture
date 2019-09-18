@@ -117,11 +117,11 @@ REACT REDUX
     Conectar componentes individuales con el store
 
 
-    Consumir el store : necesitamos la funcion connect de "react-redux", ejecutarla y pasarle el componente que queremos conectar. 
+    Consumir el store : necesitamos la funcion connect de "react-redux", ejecutarla y pasarle el componente que queremos conectar. Ademas usamos el primer parametro de connect el cual es una funcion. Esta funcion recibe una copia del store y lo que retorne, va a formar parte de los props del componente que estemos conectando. 
 
-    Despachar una acción : necesitamos la funcion connect de "react-redux", ejecutarla y pasarle el componente que queremos conectar. 
+    Despachar una acción : necesitamos la funcion connect de "react-redux", ejecutarla y pasarle el componente que queremos conectar. Ademas usamos el segundo parametro de connect el cual es una funcion. Esta funcion recibe una copia de la funcion para despachar(llamada dispatch). 
 
-
+    
 
 
 https://tinyurl.com/y5cwoj8y

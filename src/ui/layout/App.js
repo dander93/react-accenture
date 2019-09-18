@@ -10,7 +10,6 @@ class App extends Component {
     constructor(){
         super()
         this.state = {
-            links : ["perfil","portfolio","contacto"],
             texto : "Lorem Ipsum",
             contador : 0,
             visible : true,
@@ -18,7 +17,6 @@ class App extends Component {
             apellido : "",
             usuarios : []
         }
-        this.cambiarTexto = this.cambiarTexto.bind(this)
         this.aumentarContador = this.aumentarContador.bind(this)
         this.disminuirContador = this.disminuirContador.bind(this)
         this.resetearContador = this.resetearContador.bind(this)
@@ -52,15 +50,13 @@ class App extends Component {
         this.setState({ contador : 0 })
     }
     
-    cambiarTexto(){
-        this.setState({ texto : "Ipsum Lorem" })
-    }
-    
     render(){
-        let {links,contador,visible,nombre,apellido,usuarios} = this.state
+        let {contador,visible,nombre,apellido,usuarios} = this.state
         return (
             <>
-            <Header links={links}/>
+            
+            <Header/>
+
             <Main/>
 
             <Formulario visible={visible} toggleVisibility={this.toggleVisibility} handleSubmit={this.handleSubmit} handleChange={this.handleChange} nombre={nombre} apellido={apellido} usuarios={usuarios}/>
