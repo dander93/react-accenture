@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import {connect} from "react-redux"
+import {aumentarContador,disminuirContador,resetearContador} from "../../api/actions"
+import {bindActionCreators} from "redux"
 
 class Contador extends Component {
     render() {
@@ -14,4 +17,15 @@ class Contador extends Component {
     }
 }
 
-export default Contador
+let mapDispatchToProps = dispatch => {
+    return {
+        aumentarContador : bindActionCreators(aumentarContador,dispatch) , 
+        disminuirContador : bindActionCreators(disminuirContador,dispatch),
+        resetearContador : bindActionCreators(resetearContador,dispatch)
+    }
+}
+
+export default connect(
+    store => ({ 
+        contador : store.contador 
+    }), mapDispatchToProps )(Contador)

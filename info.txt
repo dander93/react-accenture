@@ -89,6 +89,13 @@ Store : Es analogo al state de un componente pero este no se crea directo sino q
 
 Reducer : Es una funcion pura que toma dos parametros : el estado inicial de la aplicación(o anterior) y el action que se está despachando. El reducer tiene que switchear en base a la acción y retornar el nuevo estado de la aplicación. 
 
+Action : Es una funcion pura que puede vivir en cualquier archivo. No necesitamos nada para crearla pero si es obligacion : 
+
+    1 - Que haya retorno de tipo Object
+    2 - Toda operacion entre el inicio del stack al retorno sea sincronica 
+
+Usualmente el objeto que retorna un action suele tener como minimo la propiedad "type". 
+
 
 
 
@@ -119,7 +126,8 @@ REACT REDUX
 
     Consumir el store : necesitamos la funcion connect de "react-redux", ejecutarla y pasarle el componente que queremos conectar. Ademas usamos el primer parametro de connect el cual es una funcion. Esta funcion recibe una copia del store y lo que retorne, va a formar parte de los props del componente que estemos conectando. 
 
-    Despachar una acción : necesitamos la funcion connect de "react-redux", ejecutarla y pasarle el componente que queremos conectar. Ademas usamos el segundo parametro de connect el cual es una funcion. Esta funcion recibe una copia de la funcion para despachar(llamada dispatch). 
+    Despachar una acción : necesitamos la funcion connect de "react-redux", ejecutarla y pasarle el componente que queremos conectar. Ademas usamos el segundo parametro de connect el cual es una funcion. Esta funcion recibe una copia de la funcion para despachar(llamada dispatch) y lo que retorne, va a formar parte de los props del componente que estemos conectando. 
+    Creo todas las acciones que necesito en algun lugar y las importo en el componente donde estoy trabajando. Fusiono mi propia accion con la funcion de dispatch utilizando "bindActionCreators" de "redux". 
 
     
 
