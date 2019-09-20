@@ -25,3 +25,15 @@ export let handleEdit = e => {
     e.preventDefault()
     return {type:"USUARIO_EDITAR"}
 }
+
+export let pedirUsuarios = () => dispatch => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+    .then(res=>res.json())
+    .then(res=>{
+        dispatch({type:"USUARIOS_PEDIR",usuarios:res})
+    })
+    .catch(err=>{
+        dispatch({type:"USUARIOS_ERROR"})
+    })
+}
+

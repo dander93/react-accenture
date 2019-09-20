@@ -138,10 +138,10 @@ https://tinyurl.com/y5cwoj8y
 
 
 
+npm i -S redux-thunk
 
 
-
-
+redux-thunk : es un plugin de redux que nos permite crear acciones asincrónicas. Para esto, el action tiene que obligatoriamente retornar una funcion, la cual va a volver a recibir "dispatch". Podemos entonces usar "dispatch" para despachar miltiples actions. 
 
 
 
@@ -270,6 +270,3 @@ SOURCE DECODED
 https://www.youtube.com/channel/UCl0hPcsUmeld49qmWWSQKOg/videos
 
 
-
-5) Crear una manera condicional de ver el texto del boton del formulario utilizando la propiedad "editar" del store 
-6) Crear una manera condicional para que el callback del formulario tambièn cambie dependiendo si hay que crear o editar un usuario 

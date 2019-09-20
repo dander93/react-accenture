@@ -1,9 +1,14 @@
 import React , {Component} from "react"
 import { connect } from "react-redux"
-import {userDelete , userChange} from "../../api/actions"
+import {userDelete , userChange,pedirUsuarios} from "../../api/actions"
 import { bindActionCreators } from "redux"
 
 class ListadoUsuarios extends Component {
+
+    componentDidMount(){
+        this.props.pedirUsuarios()
+    }
+
     render(){
         let {usuarios,userDelete,userChange} = this.props
         return(
@@ -30,5 +35,6 @@ export default connect(
     }),
     dispatch=>({
         userDelete : bindActionCreators(userDelete,dispatch),
-        userChange : bindActionCreators(userChange,dispatch)
+        userChange : bindActionCreators(userChange,dispatch),
+        pedirUsuarios : bindActionCreators(pedirUsuarios,dispatch)
     }))(ListadoUsuarios)
