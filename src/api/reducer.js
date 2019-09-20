@@ -4,11 +4,27 @@ let init = {
     visible : true,
     nombre : "",
     apellido : "",
-    usuarios : []
+    usuarios : [],
+    editar : -1 
 }
 
 let reducer = (prev=init,action) => {
     switch(action.type){
+        case "USUARIO_EDITAR" : 
+            return {
+                ...prev,
+                editar : -1,
+                nombre : "",
+                apellido : "",
+                usuarios : [
+                    ...prev.usuarios.slice(0,prev.editar),
+                    {nombre:prev.nombre,apellido:prev.apellido},
+                    ...prev.usuarios.slice(prev.editar+1)
+                ]
+            }
+
+        case "LISTADO_EDITAR" : 
+            return {...prev , nombre : prev.usuarios[action.i].nombre , apellido : prev.usuarios[action.i].apellido,editar : action.i}
         case "LISTADO_BORRAR" : 
             return { ...prev,usuarios : [...prev.usuarios.slice(0,action.i),...prev.usuarios.slice(action.i+1)]}
         case "FORMULARIO_SUBMIT" : 

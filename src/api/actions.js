@@ -18,3 +18,10 @@ export let handleChange = e => ({
 })
 
 export let userDelete = i => ({type:"LISTADO_BORRAR", i})
+
+export let userChange = i => ({type:"LISTADO_EDITAR", i})
+
+export let handleEdit = e => {
+    e.preventDefault()
+    return {type:"USUARIO_EDITAR"}
+}
