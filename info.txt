@@ -271,8 +271,12 @@ https://www.youtube.com/channel/UCl0hPcsUmeld49qmWWSQKOg/videos
 
 
 
-1) Conectar el componente ListadoUsuarios para que use el array de usuarios del store de redux y muestre una lista desordenada de usuarios
-2) Agregarle a cada item en la lista dos botones, uno para editar el usuario y otro para borrar
-3) Crear una acciòn para borrar un usuario en el archivo de actions
-4) Crear un caso en el switch del reducer que sirva para borrar un usuario
-5) Usar ese metodo en el componente ListadoUsuarios en el evento onClick del boton borrar
+1) Crear un action en el archivo de actions para editar usuarios. Esta acción va a tomar el indice del usuario a editar y su nuevo nombre y apellido como parametros y se los pasa al reducer.
+2) Crear una nueva propiedad en el store llamada "editar" e igualarla a false
+3) Crear un nuevo caso en el reducer que haga lo siguiente : 
+    - Identifique el usuario por su indice dentro del array, y use su nombre y apellido para completar las propiedades "nombre" y "apellido" del store
+    - Modifiquen la propiedad editar a true
+*) Testear desde la consola de redux el reducer 
+4) Importar el action en el componente ListadoUsuarios y agregarselo al evento onClick del boton de editar
+5) Crear una manera condicional de ver el texto del boton del formulario utilizando la propiedad "editar" del store 
+6) Crear una manera condicional para que el callback del formulario tambièn cambie dependiendo si hay que crear o editar un usuario 
