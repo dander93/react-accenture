@@ -7,7 +7,7 @@ import {bindActionCreators} from "redux"
 class Formulario extends Component {
 
     render() {
-        let {toggleVisibility,visible,handleSubmit,handleChange,nombre,apellido,usuarios} = this.props
+        let {toggleVisibility,visible,handleSubmit,handleChange,nombre,apellido} = this.props
         return (
             <div>
                 
@@ -27,7 +27,7 @@ class Formulario extends Component {
                     {visible ? "Ocultar" : "Mostrar"}
                 </button>
 
-                <ListadoUsuarios usuarios={usuarios}/>
+                <ListadoUsuarios/>
 
             </div>
         )

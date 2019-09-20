@@ -6,21 +6,12 @@ import Contador from "../widgets/Contador"
 import Formulario from "../widgets/Formulario"
 
 class App extends Component {
-
-    constructor(){
-        super()
-        this.state = {
-            usuarios : []
-        }
-    }
-    
     render(){
-        let {usuarios} = this.state
         return (
             <>
             <Header/>
             <Main/>
-            <Formulario usuarios={usuarios}/>
+            <Formulario/>
             <Contador />
             <Footer/>
             </>     

@@ -1,4 +1,5 @@
 import React , {Component} from "react"
+import { connect } from "react-redux"
 
 class ListadoUsuarios extends Component {
     render(){
@@ -15,4 +16,6 @@ class ListadoUsuarios extends Component {
     }
 }
 
-export default ListadoUsuarios
+export default connect(store=>({
+    usuarios : store.usuarios
+}),null)(ListadoUsuarios)

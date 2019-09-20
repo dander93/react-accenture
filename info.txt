@@ -269,3 +269,10 @@ https://www.youtube.com/watch?v=PMfcsYzj-9M
 SOURCE DECODED 
 https://www.youtube.com/channel/UCl0hPcsUmeld49qmWWSQKOg/videos
 
+
+
+1) Conectar el componente ListadoUsuarios para que use el array de usuarios del store de redux y muestre una lista desordenada de usuarios
+2) Agregarle a cada item en la lista dos botones, uno para editar el usuario y otro para borrar
+3) Crear una acciòn para borrar un usuario en el archivo de actions
+4) Crear un caso en el switch del reducer que sirva para borrar un usuario
+5) Usar ese metodo en el componente ListadoUsuarios en el evento onClick del boton borrar
