@@ -9,6 +9,8 @@ let init = {
 
 let reducer = (prev=init,action) => {
     switch(action.type){
+        case "LISTADO_BORRAR" : 
+            return { ...prev,usuarios : [...prev.usuarios.slice(0,action.i),...prev.usuarios.slice(action.i+1)]}
         case "FORMULARIO_SUBMIT" : 
             return { ...prev , usuarios : [...prev.usuarios,{nombre: prev.nombre,apellido: prev.apellido}] , nombre : "" , apellido : ""}
         case "FORMULARIO_CHANGE" : 

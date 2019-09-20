@@ -16,3 +16,5 @@ export let handleChange = e => ({
     valor : e.target.value,
     id : e.target.id
 })
+
+export let userDelete = i => ({type:"LISTADO_BORRAR", i})

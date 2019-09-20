@@ -1,9 +1,11 @@
 import React , {Component} from "react"
 import { connect } from "react-redux"
+import {userDelete} from "../../api/actions"
+import { bindActionCreators } from "redux"
 
 class ListadoUsuarios extends Component {
     render(){
-        let {usuarios} = this.props
+        let {usuarios,userDelete} = this.props
         return(
             <ul>
             {usuarios.length 
@@ -12,7 +14,7 @@ class ListadoUsuarios extends Component {
                     <p>{usuario.nombre} {usuario.apellido}</p>
                     <div>
                         <button>editar</button>
-                        <button>borrar</button>
+                        <button onClick={userDelete.bind(null,i)}>borrar</button>
                     </div>
                 </li> 
             ) 
@@ -22,6 +24,10 @@ class ListadoUsuarios extends Component {
     }
 }
 
-export default connect(store=>({
-    usuarios : store.usuarios
-}),null)(ListadoUsuarios)
+export default connect(
+    store=>({
+        usuarios : store.usuarios
+    }),
+    dispatch=>({
+        userDelete : bindActionCreators(userDelete,dispatch)
+    }))(ListadoUsuarios)
